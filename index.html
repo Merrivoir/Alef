@@ -39,14 +39,14 @@
   </header>
 <!-- Скрытие и появление верхней строки при прокрутке  -->
   <script>
-    let navBar = document.querySelector('.rectangle-1')
-    let prevScrollpos = window.pageYOffset;
+    let topBar = document.querySelector('.rectangle-1')
+    let prevScrollpos = window.pageYOffset + 10;
     window.onscroll = function() {
       let currentScrollPos = window.pageYOffset;
       if (prevScrollpos > currentScrollPos) {
-        navBar.style.top = "0";
+        topBar.style.top = "0";
       } else {
-        navBar.style.top = "-50px";
+        topBar.style.top = "-60px";
       }
       prevScrollpos = currentScrollPos;
     }
