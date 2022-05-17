@@ -39,16 +39,21 @@
   </header>
 <!-- Скрытие и появление верхней строки при прокрутке  -->
   <script>
-    let topBar = document.querySelector('.rectangle-1')
-    let prevScrollpos = window.pageYOffset + 10;
-    window.onscroll = function() {
-      let currentScrollPos = window.pageYOffset;
-      if (prevScrollpos > currentScrollPos) {
-        topBar.style.top = "0";
+    let prevScrollPos = window.scrollY;
+    
+    window.onscroll = function (event) {
+      let currentScrollPos = window.scrollY;
+      console.log('начальная позиция: ' + prevScrollPos);
+      console.log('текущая позиция ' + currentScrollPos);
+      
+      if (currentScrollPos > 60 && currentScrollPos > prevScrollPos) {
+        document.querySelector('.rectangle-1').style.top = "-60px";
       } else {
-        topBar.style.top = "-60px";
+        document.querySelector('.rectangle-1').style.top = "0";
       }
-      prevScrollpos = currentScrollPos;
+    
+    prevScrollPos = currentScrollPos;
+    
     }
   </script>
 
