@@ -3,10 +3,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TEST PAGE</title>
-  <link rel="stylesheet" href="sheets/styles.css">
-  <link rel="stylesheet" href="sheets/modal.css">
-  <link rel="stylesheet" href="sheets/dpopdown-menu.css">
-  <link rel="stylesheet" href="sheets/media-screen.css">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="modal.css">
+  <link rel="stylesheet" href="dpopdown-menu.css">
+  <link rel="stylesheet" href="media-screen.css">
   <!-- <script src="script1.js"></script> -->
  </head>
  
@@ -26,7 +26,7 @@
         <span>&#128105;</span>
         <span>&#10084;</span>
         <span>&#128722;</span>
-        <span><img src="img/hamenu.svg" class="hamb"></span>
+        <span><img src="hamenu.svg" class="hamb"></span>
       </div>
     </div>
     <div class="ham-menu">
@@ -69,13 +69,13 @@
   <main>
     <section class="mainblock">
       <div class="container-img">
-        <img src="img/4.jpg" class="main-img">
+        <img src="4.jpg" class="main-img">
         <div class="thumb">
-          <img src="img/4.jpg" class="mini pointer">
-          <img src="img/5.jpg" class="mini pointer">
-          <img src="img/6.jpg" class="mini pointer">
-          <img src="img/7.jpg" class="mini pointer">
-          <img src="img/8.jpg" class="mini pointer">
+          <img src="4.jpg" class="mini pointer">
+          <img src="5.jpg" class="mini pointer">
+          <img src="6.jpg" class="mini pointer">
+          <img src="7.jpg" class="mini pointer">
+          <img src="8.jpg" class="mini pointer">
         </div>
       </div>
       
@@ -167,7 +167,7 @@
 
           <div class="two-but">
             <div class="adder pointer adder"><span class="add-cart pointer adder">Добавить в корзину</span></div>
-            <div class="like-empty pointer"><img id="myBtn" class="like" src="img/heart-empty.svg"></div>
+            <div class="like-empty pointer"><img id="myBtn" class="like" src="heart-empty.svg"></div>
           </div>
         </div>
         
@@ -215,11 +215,11 @@
 
           likeButton.onclick = function () {
             let likeChoose = document.querySelector('.like').getAttribute('src');
-            if (likeChoose == 'img/heart-fill.svg') {
-              document.querySelector('.like').setAttribute('src', 'img/heart-empty.svg');
+            if (likeChoose == 'heart-fill.svg') {
+              document.querySelector('.like').setAttribute('src', 'heart-empty.svg');
               modalContent.textContent = 'Товар "' + nameItem + '" удален из избранного';
             } else {
-              document.querySelector('.like').setAttribute('src', 'img/heart-fill.svg');
+              document.querySelector('.like').setAttribute('src', 'heart-fill.svg');
               modalContent.textContent = 'Товар "' + nameItem + '" добавлен в избранное';
             };
             modal.style.display = "block";
@@ -253,11 +253,11 @@
     <div class="divide"><a href="#">Посмотреть все стили</a></div>
     
     <section class="gallery">
-      <div class="sub-gallery"><img src="img/9.jpg"></div>
-      <div class="sub-gallery"><img src="img/10.jpg"></div>
-      <div class="sub-gallery"><img src="img/11.jpg"></div>
-      <div class="sub-gallery"><img src="img/12.jpg"></div>
-      <div class="sub-gallery"><img src="img/13.jpg"></div>
+      <div class="sub-gallery"><img src="9.jpg"></div>
+      <div class="sub-gallery"><img src="10.jpg"></div>
+      <div class="sub-gallery"><img src="11.jpg"></div>
+      <div class="sub-gallery"><img src="12.jpg"></div>
+      <div class="sub-gallery"><img src="13.jpg"></div>
       <div class="sub-gallery more-pics">
         <span class="other-gallery">&#128506;</span>
         <div class="learn-clothes pointer"><span>&#129523;</span><span>Узнай, что на мне</span></div>
