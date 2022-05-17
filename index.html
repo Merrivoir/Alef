@@ -151,13 +151,14 @@
         <script>
           let dropDownMenu = document.querySelector('.dropdown-content');
           let dropButtons = document.querySelectorAll('.drop-btn')
-          
+          window.addEventListener('DOMContentLoaded', (event) => {
           window.addEventListener('click', function(event){
             if (event.target.classList.contains('drop-btn')) {
               dropDownMenu.classList.toggle('show');
             } else if (dropDownMenu.classList.contains('show')) {
               dropDownMenu.classList.remove('show');
             }
+          });
           });
         </script>
         
