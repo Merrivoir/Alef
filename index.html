@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+ <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TEST PAGE</title>
+  <link rel="stylesheet" href="sheets/styles.css">
+  <link rel="stylesheet" href="sheets/modal.css">
+  <link rel="stylesheet" href="sheets/dpopdown-menu.css">
+  <link rel="stylesheet" href="sheets/media-screen.css">
+  <!-- <script src="script1.js"></script> -->
+ </head>
+ 
+ <body>
+  
+  <div class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <p></p>
+    </div>
+  </div>
+  
+  <header>
+    <div class="rectangle-1">
+      <div class="topmenu">
+        <span>LOGO</span>
+        <span>&#128105;</span>
+        <span>&#10084;</span>
+        <span>&#128722;</span>
+        <span><img src="img/hamenu.svg" class="hamb"></span>
+      </div>
+    </div>
+    <div class="ham-menu">
+      <span class="close-ham pointer">&times;</span>
+      <span><a href="1">Постельное белье</a></span>
+      <span><a href="2">Одежда для дома</a></span>
+      <span><a href="3">Одежда для улицы</a></span>
+      <span><a href="4">Выход</a></span>
+    </div>
+  </header>
+<!-- Скрытие и появление верхней строки при прокрутке  -->
+  <script>
+    let navBar = document.querySelector('.rectangle-1')
+    let prevScrollpos = window.pageYOffset;
+    window.onscroll = function() {
+      let currentScrollPos = window.pageYOffset;
+      if (prevScrollpos > currentScrollPos) {
+        navBar.style.top = "0";
+      } else {
+        navBar.style.top = "-50px";
+      }
+      prevScrollpos = currentScrollPos;
+    }
+  </script>
+
+  <script>
+    let hamButtonMenu = document.querySelector('.hamb');
+    let hamDropMenu = document.querySelector('.ham-menu');
+    let hamClose = document.querySelector('.close-ham');
+
+    hamButtonMenu.onclick = function() {
+      hamDropMenu.style.display = "flex";
+    }
+
+    hamClose.onclick = function() {
+      hamDropMenu.removeAttribute('style');
+    }
+  </script>
+  
+  <main>
+    <section class="mainblock">
+      <div class="container-img">
+        <img src="img/4.jpg" class="main-img">
+        <div class="thumb">
+          <img src="img/4.jpg" class="mini pointer">
+          <img src="img/5.jpg" class="mini pointer">
+          <img src="img/6.jpg" class="mini pointer">
+          <img src="img/7.jpg" class="mini pointer">
+          <img src="img/8.jpg" class="mini pointer">
+        </div>
+      </div>
+      
+      <script> // обработчик клика на миниатюре
+        let thumbnails = document.querySelectorAll('.mini');
+        let thumb = document.querySelector('.main-img');
+        let mainImg = thumb.getAttribute('src');
+        
+        thumbnails[0].setAttribute('style', 'opacity:1');
+        
+        for (let thumbnail of thumbnails) {
+          thumbnail.onclick = function() {
+            let activePath = thumbnail.getAttribute('src');
+            thumb.setAttribute('src', activePath);
+            thumbnail.setAttribute('style', 'opacity:1');
+            
+            for (let miniImg of thumbnails) {
+              let miniPath = miniImg.getAttribute('src');
+              if (miniPath !== activePath) {
+                miniImg.removeAttribute('style');
+              }
+              }
+          }
+        }
+      </script>
+      
+      <div class="content-product">
+        
+        <h2 class="item-name">Пижама для девочек</h2>
+        
+        <div class="articul">Арт. 026401/41</div>
+        
+        <div class="feedback">
+          <span>Отзывы</span>
+          <span class="star-1">&#9733;</span>
+          <span class="star-2">&#9733;</span>
+          <span class="star-3">&#9733;</span>
+          <span class="star-4">&#9733;</span>
+          <span class="star-5">&#9734;</span>
+          <span class="feedback-count">14 отзывов</span>
+          <span class="arrow-right pointer">&#10095;</span>
+        </div>
+        <div class="pricer">
+          <span class="price">800 &#8381;</span>
+          <span class="oldprice">1200 &#8381;</span>
+          <span class="arrow-right pointer">&#10095;</span>
+        </div>
+        <div class="discount">
+            <span class="dis1">Скидка -36%</span>
+            <span class="dis1">Акция -20%</span>
+        </div>
+        
+        <div class="dropdown">
+          <div class = "dropdown-menu pointer drop-btn">
+            <span class = "dropdown-elem drop-btn">Выбрать размер</span>
+            <span class = "dropdown-elem drop-btn">&#5167;</span>
+          </div>
+          <div class="dropdown-content">
+            <a href="1">XS</a>
+            <a href="2">S</a>
+            <a href="3">M</a>
+            <a href="4">L</a>
+            <a href="5">XL</a>
+          </div>
+        </div>
+
+        <!-- обработчик выпадающего меню выбора размера -->
+        <script>
+          let dropDownMenu = document.querySelector('.dropdown-content');
+          let dropButtons = document.querySelectorAll('.drop-btn')
+          
+          window.addEventListener('click', function(event){
+            if (event.target.classList.contains('drop-btn')) {
+              dropDownMenu.classList.toggle('show');
+            } else if (dropDownMenu.classList.contains('show')) {
+              dropDownMenu.classList.remove('show');
+            }
+          });
+        </script>
+        
+        <div class="table-size"><a href="#">Определить размер</a></div>
+        
+        <div class="cart-option">
+          <div class="count">
+            <button class="count-inc pointer">&#43;</button>
+            <span class="count-value">1</span>
+            <button class="count-dec pointer">&#8722;</button>
+          </div>
+
+          <div class="two-but">
+            <div class="adder pointer adder"><span class="add-cart pointer adder">Добавить в корзину</span></div>
+            <div class="like-empty pointer"><img id="myBtn" class="like" src="img/heart-empty.svg"></div>
+          </div>
+        </div>
+        
+        <!-- обработчики кликов на "+", "-", "Добавить в корзину", "Добавить в избранное" -->
+        <script> 
+          
+          let plusCart = document.querySelector('.count-inc');
+          let numCart = document.querySelector('.count-value');
+          let minusCart = document.querySelector('.count-dec');
+
+          let cartCount = Number(numCart.textContent);
+
+          plusCart.onclick = function() {
+            cartCount += 1;
+            numCart.textContent = cartCount;
+          };
+
+          minusCart.onclick = function() {
+            cartCount -=1 ? cartCount > 1 : cartCount = 1;
+            numCart.textContent = cartCount;
+          };
+          
+          // Добавить в корзину
+          
+          let nameItem = document.querySelector('h2').textContent;
+          let addCartButton = document.querySelector('.add-cart');
+
+          window.addEventListener('click', function(){
+            if (event.target.classList.contains('adder')) {
+              modalContent.textContent = 'Товар "' + nameItem + '" в количестве ' + cartCount + ' шт. добавлен в корзину';
+              modal.style.display = "block";
+              modal.classList.remove("hidden");
+
+              setTimeout(function(){
+                modal.classList.add("hidden");
+              }, 2000);
+            }
+          });
+        
+          let likeButton = document.querySelector('.like-empty');
+          
+          let modalContent = document.querySelector('.modal-content p');
+          let modal = document.querySelector('.modal');
+          let span = document.getElementsByClassName("close")[0];
+
+          likeButton.onclick = function () {
+            let likeChoose = document.querySelector('.like').getAttribute('src');
+            if (likeChoose == 'img/heart-fill.svg') {
+              document.querySelector('.like').setAttribute('src', 'img/heart-empty.svg');
+              modalContent.textContent = 'Товар "' + nameItem + '" удален из избранного';
+            } else {
+              document.querySelector('.like').setAttribute('src', 'img/heart-fill.svg');
+              modalContent.textContent = 'Товар "' + nameItem + '" добавлен в избранное';
+            };
+            modal.style.display = "block";
+            modal.classList.remove("hidden");
+            
+            setTimeout(function(){
+              modal.classList.add("hidden");
+            }, 1200);
+          }
+          
+          // Закрытие модального окна
+
+          span.onclick = function() {
+            modal.style.display = "none";
+          }
+
+          window.addEventListener('click', function(event) {
+            if (event.target == modal) {
+              modal.style.display = "none";
+            }
+          });
+              
+        </script>
+
+        <div class="instant-buy"><a href="#">Купить в 1 клик</a></div>
+        <div class="description-item"><span>&#128090;&nbsp;</span><a href="#">Описание товара</a></div>
+        <div class="delivery"><span>&#128339;&nbsp;</span><a href="#">Доставка и возврат</a></div>
+        <div class="payments"><span>&#128179;&nbsp;</span><a href="#">Способы оплаты</a></div>
+        </div>
+    </section>
+    <div class="divide"><a href="#">Посмотреть все стили</a></div>
+    
+    <section class="gallery">
+      <div class="sub-gallery"><img src="img/9.jpg"></div>
+      <div class="sub-gallery"><img src="img/10.jpg"></div>
+      <div class="sub-gallery"><img src="img/11.jpg"></div>
+      <div class="sub-gallery"><img src="img/12.jpg"></div>
+      <div class="sub-gallery"><img src="img/13.jpg"></div>
+      <div class="sub-gallery more-pics">
+        <span class="other-gallery">&#128506;</span>
+        <div class="learn-clothes pointer"><span>&#129523;</span><span>Узнай, что на мне</span></div>
+        <div class="likes"><span>&#129293;</span><span class="like-count">200</span></div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="info">
+      <div class="bot-nav">
+        <span>Покупателям</span>
+        <span><a href="1">Каталог</a></span>
+        <span><a href="1">Акции</a></span>
+        <span><a href="1">Бренды</a></span>
+      </div>
+      <div class="bot-nav">
+        <span>О нас</span>
+        <span><a href="1">О компании</a></span>
+        <span><a href="1">Новости</a></span>
+        <span><a href="1">Команда</a></span>
+      </div>
+    </div>
+    <div class="subscribe">
+      <form id="email-form" class="subscribe-form">
+        <span>Узнайте&nbsp;первым&nbsp;о новинках&nbsp;и&nbsp;акциях</span>
+        <div class="email-input">
+          <input form="email-form" class="email" type="email" placeholder="Адрес электронной почты">
+          <span class="close erase-email">&times;</span>
+        </div>
+        <input type="submit" form="email-form" class="subscribe-button pointer" value="Подписаться">
+      </form>
+    </div>
+
+    <script>
+      let eraseButton = document.querySelector('.erase-email');
+      let emailField = document.querySelector('.email')
+
+      eraseButton.onclick = function() {
+        if (emailField.value) {
+          emailField.value='';
+        }
+      }
+    </script>
+  </footer>
+  </body>
+  </html>
+   
