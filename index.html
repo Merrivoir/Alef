@@ -99,11 +99,11 @@
         </div>
         
         <div class="size-dropdown">
-          <a href="#">XS</a>
-          <a href="#">S</a>
-          <a href="#">M</a>
-          <a href="#">L</a>
-          <a href="#">XL</a>
+          <span>XS</span>
+          <span>S</span>
+          <span>M</span>
+          <span>L</span>
+          <span>XL</span>
         </div>
       </div>
 
@@ -273,6 +273,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
   for (let sizeItem of sizeItems) {
     sizeItem.onclick = function() {
       dropDownMenu.classList.remove('show');
+      dropButtons[1].textContent = sizeItem.textContent;
     }
   }
         
