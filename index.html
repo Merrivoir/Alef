@@ -3,12 +3,22 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TEST PAGE</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="modal.css">
-    <link rel="stylesheet" href="dpopdown-menu.css">
-    <link rel="stylesheet" href="media-screen.css">
+    <link rel="stylesheet" href="sheets/styles.css">
+    <link rel="stylesheet" href="sheets/modal.css">
+    <link rel="stylesheet" href="sheets/dpopdown-menu.css">
+    <link rel="stylesheet" href="sheets/media-screen.css">
     <script src="script.js"></script> 
   </head>
+
+<!-- <script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    let userAgent = navigator.userAgent;
+    let appName = navigator.appName;
+    let appCodeName = navigator.appCodeName;
+    let appVersion = navigator.appVersion
+    alert(userAgent + '\n' + appName + '\n' + appCodeName + '\n' + appVersion);
+  });
+</script> -->
 
 <body>
   <div class="modal">
@@ -17,33 +27,25 @@
       <p></p>
     </div>
   </div>
-  <script>
-    
-    let modalCloseButton = document.querySelector('.close');
-
-    modalCloseButton.onclick = function() {
-      modal.style.display = 'none';
-    }
-
-  </script>
   
   <header>
+    
     <div class="top-bar">
       <div class="top-bar-nav">
         <span><a href="#">LOGO</a></span>
-        <span><a href="#"><img src="person_d.PNG" class="top-bar-nav-img"></a></span>
-        <span><a href="#"><img src="heart-e_d.PNG" class="top-bar-nav-img"></a></span>
-        <span><a href="#"><img src="shop_d.PNG" class="top-bar-nav-img"></a></span>
-        <span><img src="hamb_d.PNG" class="hamburger-button top-bar-nav-img pointer"></span>
+        <span><a href="#"><img src="img/person_d.PNG" class="top-bar-nav-img"></a></span>
+        <span><a href="#"><img src="img/heart-e_d.PNG" class="top-bar-nav-img"></a></span>
+        <span><a href="#"><img src="img/shop_d.PNG" class="top-bar-nav-img"></a></span>
+        <span><img src="img/hamb_d.PNG" class="hamburger-button top-bar-nav-img pointer"></span>
       </div>
     </div>
     
     <div class="hamburger-menu">
-      <span class="hamburger-close">&times;</span>
-      <span><a href="#">Постельное белье</a></span>
-      <span><a href="#">Одежда для дома</a></span>
-      <span><a href="#">Одежда для улицы</a></span>
-      <span><a href="#">Выход</a></span>
+      <span class="hamburger-close pointer">&times;</span>
+      <span class="hamburger-menu-item pointer"><a>Постельное белье</a></span>
+      <span class="hamburger-menu-item pointer"><a>Одежда для дома</a></span>
+      <span class="hamburger-menu-item pointer"><a>Одежда для улицы</a></span>
+      <span class="hamburger-menu-item pointer"><a>Выход</a></span>
     </div>
   
   </header>
@@ -53,13 +55,13 @@
   <section class="mainblock">
       
     <div class="mb-container-img">
-      <img src="4.jpg">
+      <img src="img/4.jpg" class="main">
       <div class="mb-container-mini">
-        <img src="4.jpg" class="mini pointer">
-        <img src="5.jpg" class="mini pointer">
-        <img src="6.jpg" class="mini pointer">
-        <img src="7.jpg" class="mini pointer">
-        <img src="8.jpg" class="mini pointer">
+        <img src="img/4.jpg" class="mini pointer">
+        <img src="img/5.jpg" class="mini pointer">
+        <img src="img/6.jpg" class="mini pointer">
+        <img src="img/7.jpg" class="mini pointer">
+        <img src="img/8.jpg" class="mini pointer">
       </div>
     </div>
       
@@ -119,7 +121,7 @@
             <span class="fs-standart">Добавить в корзину</span>
           </div>
           <div class="add-favorite pointer">
-            <img class="like" src="heart-e_l.PNG">
+            <img class="like" src="img/heart-e_l.PNG">
           </div>
         </div>
       </div>
@@ -127,11 +129,11 @@
         
       <div class="mb-info-instant fs-standart"><a href="#">Купить в 1 клик</a></div>
       
-      <div class="mb-info-extra fs-standart"><span><img src="cloth_d.PNG" class="desc-img"></span><a href="#">Описание товара</a></div>
+      <div class="mb-info-extra fs-standart"><span><img src="img/cloth_d.PNG" class="desc-img"></span><a href="#">Описание товара</a></div>
       
-      <div class="mb-info-extra fs-standart"><span><img src="clock_d.PNG" class="desc-img"></span><a href="#">Доставка и возврат</a></div>
+      <div class="mb-info-extra fs-standart"><span><img src="img/clock_d.PNG" class="desc-img"></span><a href="#">Доставка и возврат</a></div>
       
-      <div class="mb-info-extra fs-standart"><span><img src="card_d.PNG" class="desc-img"></span><a href="#">Способы оплаты</a></div>
+      <div class="mb-info-extra fs-standart"><span><img src="img/card_d.PNG" class="desc-img"></span><a href="#">Способы оплаты</a></div>
     
     </div>
   </section>
@@ -139,28 +141,28 @@
   <div class="divide fs-standart"><a href="#">Посмотреть все стили</a></div>
     
   <section class="gallery">
-    <div class="sub-gallery"><img src="9.jpg"></div>
+    <div class="sub-gallery"><img src="img/9.jpg"></div>
     
-    <div class="sub-gallery"><img src="10.jpg"></div>
+    <div class="sub-gallery"><img src="img/10.jpg"></div>
     
-    <div class="sub-gallery"><img src="11.jpg"></div>
+    <div class="sub-gallery"><img src="img/11.jpg"></div>
     
-    <div class="sub-gallery"><img src="12.jpg"></div>
+    <div class="sub-gallery"><img src="img/12.jpg"></div>
     
-    <div class="sub-gallery"><img src="13.jpg"></div>
+    <div class="sub-gallery"><img src="img/13.jpg"></div>
     
     <div class="sub-gallery sub-gallery-overlayer fs-standart">
       <div class="sub-gallery-picture">
-        <span><img src="set_l.PNG" class="top-bar-nav-img"></span>
+        <span><img src="img/set_l.PNG" class="top-bar-nav-img"></span>
       </div>
       
       <div class="sub-gallery-clothes pointer">
-        <span><img src="shop_l.PNG" class="add-img"></span>
+        <span><img src="img/shop_l.PNG" class="add-img"></span>
         <span>Узнай, что на мне</span>
       </div>
      
       <div class="sub-gallery-likes">
-        <span><img src="heart-f_l.PNG" class="desc-img"></span>
+        <span><img src="img/heart-f_l.PNG" class="desc-img"></span>
         <span class="sub-gallery-likecount">200</span>
       </div>
     </div>
@@ -200,7 +202,8 @@
 </body>
 
 <script>
-
+window.addEventListener('DOMContentLoaded', (event) => {
+  
   /* Гамбургер меню */
   let hamButtonMenu = document.querySelector('.hamburger-button');
   let hamDropMenu = document.querySelector('.hamburger-menu');
@@ -226,7 +229,7 @@
       hamDropMenu.removeAttribute('style');
     }
   }
-  
+
   /* Клик по миниатюре */
   let miniImages = document.querySelectorAll('.mini');
   let mainImage = document.querySelector('.main');
@@ -250,8 +253,9 @@
   }
 
   /* Выпадающее меню выбора размера */
-  let dropDownMenu = document.querySelector('.dropdown-content');
-  let dropButtons = document.querySelectorAll('.drop-btn')
+  let dropDownMenu = document.querySelector('.size-dropdown');
+  let dropButtons = document.querySelectorAll('.size-btn');
+  let sizeItems = document.querySelectorAll('.size-dropdown a');
 
   for (let dropButton of dropButtons) {
     dropButton.onclick = function(event) {
@@ -263,10 +267,16 @@
         dropDownMenu.classList.remove('show'); 
         // код на случай если получится заставить работать addEventListener на iOS
       }*/
-    };
-  };
+    }
+  }
+
+  for (let sizeItem of sizeItems) {
+    sizeItem.onclick = function() {
+      dropDownMenu.classList.remove('show');
+    }
+  }
         
-    /* Увеличить и уменьшить количество */
+  /* Увеличить и уменьшить количество */
   let plusCart = document.querySelector('.count-inc');
   let numCart = document.querySelector('.count-value');
   let minusCart = document.querySelector('.count-dec');
@@ -300,6 +310,11 @@
   let likeButton = document.querySelector('.add-favorite');
   let modalContent = document.querySelector('.modal-content p');
   let modal = document.querySelector('.modal');
+  let modalCloseButton = document.querySelector('.close');
+
+  modalCloseButton.onclick = function() {
+    modal.style.display = 'none';
+  }
 
   likeButton.onclick = function () {
     let likeChoose = document.querySelector('.like').getAttribute('src');
@@ -339,7 +354,7 @@
         emailField.value='';
       }
     }
-
+});
 </script>
 </html>
    
