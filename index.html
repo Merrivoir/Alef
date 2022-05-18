@@ -17,6 +17,15 @@
       <p></p>
     </div>
   </div>
+  <script>
+    
+    let modalCloseButton = document.querySelector('.close');
+
+    modalCloseButton.onclick = function() {
+      modal.style.display = 'none';
+    }
+
+  </script>
   
   <header>
     <div class="top-bar">
@@ -257,7 +266,7 @@
     };
   };
         
-  /* Увеличить и уменьшить количество */
+    /* Увеличить и уменьшить количество */
   let plusCart = document.querySelector('.count-inc');
   let numCart = document.querySelector('.count-value');
   let minusCart = document.querySelector('.count-dec');
@@ -274,26 +283,23 @@
   };
           
   /* Добавить в Корзину */
-  let nameItem = document.querySelector('h2').textContent;
+  let nameItem = document.querySelector('.mb-info-name').textContent;
   let addCartButton = document.querySelector('.add-cart');
 
-  window.addEventListener('click', function(){
-    if (event.target.classList.contains('adder')) {
-      modalContent.textContent = 'Товар "' + nameItem + '" в количестве ' + cartCount + ' шт. добавлен в корзину';
-      modal.style.display = "block";
-      modal.classList.remove("hidden");
+  addCartButton.onclick = function() {
+    modalContent.textContent = 'Товар "' + nameItem + '" в количестве ' + cartCount + ' шт. добавлен в корзину';
+    modal.style.display = "block";
+    modal.classList.remove("hidden");
 
-      setTimeout(function(){
-        modal.classList.add("hidden");
-      }, 2000);
-    }
-  });
+    setTimeout(function(){
+      modal.classList.add("hidden");
+    }, 2000);
+  }
   
   /*Добавить в Избранное */
-  let likeButton = document.querySelector('.like-empty');
+  let likeButton = document.querySelector('.add-favorite');
   let modalContent = document.querySelector('.modal-content p');
   let modal = document.querySelector('.modal');
-  let span = document.getElementsByClassName("close")[0];
 
   likeButton.onclick = function () {
     let likeChoose = document.querySelector('.like').getAttribute('src');
@@ -311,13 +317,14 @@
       modal.classList.add("hidden");
     }, 1200);
   }
-          
-  /* Закрытие модального окна */
-  span.onclick = function() {
-    modal.style.display = "none";
-  }
 
   window.addEventListener('click', function(event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  });
+
+  window.addEventListener('touchstart', function(event) {
     if (event.target == modal) {
       modal.style.display = "none";
     }
