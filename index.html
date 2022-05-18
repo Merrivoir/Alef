@@ -10,7 +10,17 @@
   <!-- <script src="script1.js"></script> -->
  </head>
  
- <body>
+<script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    let userAgent = navigator.userAgent;
+    let appName = navigator.appName;
+    let appCodeName = navigator.appCodeName;
+    let appVersion = navigator.appVersion
+    alert(userAgent + '\n' + appName + '\n' + appCodeName + '\n' + appVersion);
+  });
+</script>
+ 
+<body>
   
   <div class="modal">
     <div class="modal-content">
@@ -150,8 +160,7 @@
         <!-- обработчик выпадающего меню выбора размера -->
         <script>
          window.addEventListener('DOMContentLoaded', (event) => {
-          alert('Замена touch на touchstart');
-          
+                  
           let dropDownMenu = document.querySelector('.dropdown-content');
           let dropButtons = document.querySelectorAll('.drop-btn')
           
