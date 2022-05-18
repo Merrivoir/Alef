@@ -220,7 +220,7 @@ a {
   
   .add-cart {
     background-color: #333333;
-    color: white;
+    color: #FFFFFF;
     border: none;
     height: 44px;
     width: 203px;
@@ -408,7 +408,8 @@ footer {
 
   .subscribe-button {
     width: 150px;
-    height: 36px; 
+    height: 36px;
+    color: #FFFFFF;
     align-self: flex-end;
     border: 1px solid #333333;
     border-radius: 0px;
