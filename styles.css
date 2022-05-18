@@ -1,3 +1,4 @@
+/* Общий стиль элементов */
 body {
   margin: 0;
   font-family: 'Open Sans', Helvetica, Arial, sans-serif;
@@ -6,8 +7,27 @@ body {
   font-weight: 400;
   letter-spacing: 0.04em;
 }
-/* верхнее меню */
-.rectangle-1 {
+
+img {
+  width: 100%;
+  margin: 0;
+}
+
+a {
+  color: #333333;
+}
+
+.fs-standart {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+/* Верхнее меню */
+.top-bar {
   display: flex;
   width: 100%;
   height: 40px;
@@ -15,68 +35,63 @@ body {
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.topmenu {
-  width: 100%;
-  max-width: 1390px;
-  margin: auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 30px;
-}
+  .top-bar-nav {
+    width: 100%;
+    max-width: 1390px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+  }
   
-  .topmenu span:first-child {
+  .top-bar-nav span:first-child {
     margin: 0 auto 0 0;
     font-size: 22px;
     line-height: 16px;
     font-weight: 700;
   }
 
-  .topmenu span {
-    cursor: pointer;
+  .top-bar-nav span a {
+    text-decoration: none;
   }
-  
-  .ham-menu {
+
+  .top-bar-nav-img {
+    width: 20px;
+    vertical-align: middle;
+  }
+
+  .top-bar-nav span:last-child {
     display: none;
   }
+
 @media screen and (max-width: 1390px) {
-  .topmenu {
+  .top-bar-nav {
     margin: auto 20px;
   }
 }
 
-.topmenu span:last-child {
-  display: none;
+/* Гамбургер меню */
+.hamburger-menu {
+    display: none;
 }
 
-  img.star {
-    width: 10px;
-  }
-  
-  img {
-    width: 100%;
-    margin: 0;
-  }
-  
-  a {
-    color: #333333;
-  }
-  
-  .mainblock {
-    max-width: 1390px;
-    margin: 20px auto 0;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    justify-content: center;
-    gap: 20px;
-  }
+/* Основная секция */
+.mainblock {
+  max-width: 1390px;
+  margin: 20px auto 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
+  gap: 20px;
+}
 
-  .container-img {
+/* Блок с изображениями */
+  .mb-container-img {
     position: relative;
-    width: 100%;
   }
   
-  .thumb {
+  .mb-container-mini {
     position: absolute;
     top: 3%;
     left: 4%;
@@ -94,178 +109,159 @@ body {
   .mini:hover {
     opacity: 0.5;
   }
-  
-  .options {
-    display: block;
-  }
-  
-  .content-product {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-  }
 
-  .item-name {
+/* Блок с информацией о товаре*/
+.mb-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+  .mb-info-name {
     font-size: 18px;
     line-height: 24px;
     font-weight: 600;
     margin: 20px 0 10px 0;
   }
 
-  .articul {
+  .mb-info-sku {
     font-size: 12px;
     line-height: 16px;
     color: #828282;
   }
 
-  .feedback {
-    display: flex;
-    margin: 20px 0 0 0;
-    font-size: 14px;
-    line-height: 20px;
-  }
+/* Блок с отзывами */
+.mb-info-feedback {
+  display: flex;
+  margin: 20px 0 0 0;
+}
 
-  .feedback span:first-child,
-  .feedback span:nth-child(6),
-  .feedback span:nth-child(7) {
+  .mb-info-feedback span:first-child,
+  .mb-info-feedback span:nth-child(6),
+  .mb-info-feedback span:nth-child(7) {
     margin: 0px 10px 0 0;
   }
   
-  .pricer {
-    margin: 30px 0 0 0;
-    display:flex;
-    align-items: center;
-    gap: 12px;
-  }
+/* Блок с ценами */
+.mb-info-price {
+  margin: 30px 0 0 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
 
-  .price {
+  .price-current {
     font-size: 24px;
     line-height: 24px;
     font-weight: 700;
   }
 
-  .oldprice {
-    font-size: 14px;
-    line-height: 20px;
+  .price-old {
     text-decoration: line-through;
     color: #828282;
     margin-right: 8px;
   }
   
-  .discount {
-    margin: 10px 0 0 0;
-  }
+/* Блок со скидками и акциями */
+.mb-info-promo {
+  margin: 10px 0 0 0;
+}
 
-  .dis1 {
+  .promo {
     font-size: 12px;
     line-height: 16px;
     border: 1px solid #333333;
     padding: 2px 4px;
   }
-  
-  .table-size {
-    margin: 10px 0 0 0;
-  }
 
-  .table-size, .instant-buy, .description-item,
-  .delivery, .payments {
-    font-size: 14px;
-    line-height: 20px;
-  }
+  /* Блок выбора и определения размера
+стили контейнера и выпадающего списка находятся
+  в dropdown-menu.css */
+.mb-info-size-table {
+  margin: 10px 0 0 0;
+}
 
-  .cart-option {
-    margin: 30px 0 0 0;
-    display:flex;
-    flex-wrap:wrap;
-    gap: 12px 2px;
-  }
+/* Блок счетчика и добавления в корзину и избранное */
+.mb-info-actions {
+  margin: 40px 0 0 0;
+  display:flex;
+  flex-wrap:wrap;
+  gap: 12px 2px;
+}
   
-  .count {
+  .actions-count {
     background-color: #f2f2f2;
     margin-right: 10px;
     min-width: 145px;
-    height: 32px;
+    height: 44px;
     display: flex;
     justify-content: space-between;
   }
   
-  .count-inc, .count-dec, .count-value {
-    align-self:center;
-    background-color: #f2f2f2;
-    border: none;
-  }
+    .count-inc, .count-dec, .count-value {
+      align-self:center;
+      background-color: #f2f2f2;
+      border: none;
+    }
 
-  .count-inc {
-    padding-left: 12px;
-  }
+    .count-inc {
+      padding-left: 12px;
+    }
 
-  .count-dec {
-    padding-right: 12px;
-  }
+    .count-dec {
+      padding-right: 12px;
+    }
 
-  .two-but {
+  .actions-add {
     display: flex;
     flex-wrap: nowrap;
     gap: 5px;
   }
   
-  .adder {
-    display: flex;
-    background-color: #333333;
-    height: 32px;
-    width: 203px;
-    justify-content: center;
-    align-items: center;
-  }
-
   .add-cart {
     background-color: #333333;
     color: white;
     border: none;
-    font-family: Helvetica, Arial, sans-serif;
-    font-size: 14px;
-    font-weight: 400;
+    height: 44px;
+    width: 203px;
+    font-size: inherit;
+    line-height: 20px;
+    display: flex;
   }
+    .add-cart span {
+      margin: auto;
+    }
 
-  .like-empty {
+  .add-favorite {
     width: 44px;
     height: 44px;
     background-color: #333333;
     display: flex;
   }
 
-  .like {
-    background-image: url(img/heart-empty);
-    width: 20px;
-    height: 20px;
-    margin: auto;
-  }
+    .like {
+      width: 20px;
+      height: 20px;
+      margin: auto;
+    }
 
-  .count, .adder, .like {
-    padding: 6px;
-  }
-
-  .instant-buy {
-    margin: 10px 0 0 0;
-    padding-bottom: 20px;
+  .mb-info-instant {
+    margin: 12px 0 24px 0;
+    padding-bottom: 30px;
     border-bottom: 0.5px solid #c4c4c4;
   }
-  .description-item, .delivery, .payments {
-    height: 20px;
+
+  .mb-info-extra {
     margin-bottom: 12px;
   }
 
-  .description-item {
-    margin-top: 24px;
-  }
-
+  /* Разделитель */
   .divide {
-    font-size: 14px;
-    line-height: 20px;
-    padding: 30px 0;
+    margin: 30px 0;
     text-align: center;
   }
-  
+
+  /* Галерея других продуктов */
   .gallery {
     max-width: 1390px;
     margin: 0 auto;
@@ -275,30 +271,31 @@ body {
     gap: 16px;
   }
 
-  .gallery div:first-child {
-    grid-area: 1/1/3/3;
-  }
-  .gallery div:nth-child(2) {
-    grid-area: 1/3/2/4;
-  }
+    .gallery div:first-child {
+      grid-area: 1/1/3/3;
+    }
+    
+    .gallery div:nth-child(2) {
+      grid-area: 1/3/2/4;
+    }
 
-  .gallery div:nth-child(3) {
-    grid-area: 1/4/2/5;
-  }
+    .gallery div:nth-child(3) {
+      grid-area: 1/4/2/5;
+    }
 
-  .gallery div:nth-child(4) {
-    grid-area: 2/3/3/4;
-  }
+    .gallery div:nth-child(4) {
+      grid-area: 2/3/3/4;
+    }
 
-  .gallery div:nth-child(5) {
-    grid-area: 2/4/3/5;
-  }
+    .gallery div:nth-child(5) {
+      grid-area: 2/4/3/5;
+    }
 
-  .sub-gallery {
-    display: flex;
-  }
+    .sub-gallery {
+      display: flex;
+    }
 
-    .more-pics {
+    .sub-gallery-overlayer {
       width: 100%;
       grid-area: 2/3/3/4;
       background-color:#333333;
@@ -307,35 +304,38 @@ body {
       flex-direction: column;
       justify-content: space-between;
       color: #FFFFFF;
-      font-size: 14px;
-      line-height: 20px;
       align-items: center;
     }
 
-    .other-gallery {
+    .sub-gallery-picture {
       align-self: flex-end;
       margin: 10px;
     }
 
-    .learn-clothes {
+    .sub-gallery-clothes {
       margin-top: 5%;
-      display:flex;
+      display: flex;
       flex-direction: column;
       align-items: center;
+      gap: 7px;
     }
 
-    .likes {
-      margin-bottom: 20px;
+    .sub-gallery-likes {
+      margin-bottom: 5.9%
     }
 
-      .likes span {
-        padding-inline: 2px;
-      }
+    .desc-img {
+      width: 20px;
+      vertical-align: middle;
+      margin-right: 8px;
+    }
+    
+    .add-img {
+      width: 40px;
+      vertical-align: middle;
+    }
 
-.pointer {
-  cursor: pointer;
-}
-
+/* Подвал */
 footer {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -344,16 +344,11 @@ footer {
   max-width: 1390px;
 }
 
-.info {
-  grid-area: 1 / 1 / 2 / 2;
-  display:flex;
+.bottom-info {
+  grid-area: 1/1/2/2;
+  display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-}
-
-.subscribe {
-  grid-area: 1 / 2 / 2 / 3;
-  display:flex;
 }
 
 .bot-nav span:first-child, .subscribe span:first-child {
@@ -366,8 +361,6 @@ footer {
 .bot-nav {
   display: flex;
   flex-direction: column;
-  font-size: 14px;
-  line-height: 20px;
   gap: 8px;
 }
 
@@ -376,39 +369,48 @@ footer {
   text-decoration: none;
 }
 
-.subscribe-form {
-  display: flex;
-  flex-direction: column;
-  margin: 0 auto;
-}
+/* Форма подписки */
+  .bottom-subscribe {
+    grid-area: 1/2/2/3;
+    display:flex;
+  }
 
-.email {
-  width: 100%;
-  color: #828282;
-  background-color: #FFFFFF;
-  font-size: 14px;
-  line-height: 20px;
-  letter-spacing: 0.04em;
-  font-weight: 400;
-  border: none;
-  outline: none;
-}
+  .subscribe-form {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+  }
 
-.email-input {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 8px;
-  height: 36px;
-  border-bottom: 1px solid #c4c4c4;
-  margin: 26px 0;
-}
+  .subscribe-form span {
+    text-transform: uppercase;
+  }
 
-.subscribe-button {
-  width: 150px;
-  height: 36px; 
-  align-self: flex-end;
-  border: 1px solid #333333;
-  border-radius: 0px;
-  background-color: #FFFFFF;
-}
+  .email {
+    width: 100%;
+    color: #828282;
+    background-color: #FFFFFF;
+    letter-spacing: 0.04em;
+    font-weight: 400;
+    border: none;
+    outline: none;
+  }
+
+  .email-input {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    height: 36px;
+    border-bottom: 1px solid #c4c4c4;
+    margin: 26px 0;
+  }
+
+  .subscribe-button {
+    width: 150px;
+    height: 36px; 
+    align-self: flex-end;
+    border: 1px solid #333333;
+    border-radius: 0px;
+    background-color: #FFFFFF;
+  }
