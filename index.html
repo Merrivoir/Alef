@@ -318,11 +318,11 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
   likeButton.onclick = function () {
     let likeChoose = document.querySelector('.like').getAttribute('src');
-    if (likeChoose == 'img/heart-f_l.png') {
-      document.querySelector('.like').setAttribute('src', 'img/heart-e_l.png');
+    if (likeChoose == 'heart-f_l.png') {
+      document.querySelector('.like').setAttribute('src', 'heart-e_l.png');
       modalContent.textContent = 'Товар "' + nameItem + '" удален из избранного';
     } else {
-      document.querySelector('.like').setAttribute('src', 'img/heart-f_l.png');
+      document.querySelector('.like').setAttribute('src', 'heart-f_l.png');
       modalContent.textContent = 'Товар "' + nameItem + '" добавлен в избранное';
     };
     modal.style.display = "block";
