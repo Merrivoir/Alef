@@ -27,7 +27,7 @@
       height: auto;
       z-index: 1;
       text-transform: uppercase;
-      gap: 30px;
+      gap: 0;
       padding: 80px 0 30px 0;
       
     }
@@ -35,13 +35,19 @@
     .hamburger-close {
       font-size: 30px;
       position: absolute;
-      top: 20px;
-      right: 20px;
+      top: 0;
+      right: 0;
+      padding: 20px;
     }
     
-    .hamburger-menu a {
-      padding: 0 0 0 30px;
-      text-decoration: none;
+    .hamburger-menu-item {
+      padding: 0;
+      display: contents;
+    }
+
+    .hamburger-menu-item a {
+    text-decoration: none;
+    padding: 15px 15px 15px 30px;
     }
     
     img.star {
