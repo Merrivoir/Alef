@@ -39,13 +39,13 @@
   }
   
   /* Ссылки внутри выпадающего списка */
-  .size-dropdown a {
+  .size-dropdown span {
     color:#333333;
     padding: 12px 16px;
     text-decoration: none;
   }
   
-  .size-dropdown a:hover {
+  .size-dropdown span:hover {
       background-color: #c4c4c4
     }
 
