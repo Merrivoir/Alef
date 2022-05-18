@@ -219,19 +219,19 @@
   }
   
   /* Клик по миниатюре */
-  let thumbnails = document.querySelectorAll('.mini');
-  let thumb = document.querySelector('.main-img');
-  let mainImg = thumb.getAttribute('src');
+  let miniImages = document.querySelectorAll('.mini');
+  let mainImage = document.querySelector('.main');
+  let mainImg = mainImage.getAttribute('src');
         
-  thumbnails[0].setAttribute('style', 'opacity:1');
+  miniImages[0].setAttribute('style', 'opacity:1');
         
-  for (let thumbnail of thumbnails) {
-    thumbnail.onclick = function() {
-      let activePath = thumbnail.getAttribute('src');
-      thumb.setAttribute('src', activePath);
-      thumbnail.setAttribute('style', 'opacity:1');
+  for (let miniImage of miniImages) {
+    miniImage.onclick = function() {
+      let activePath =  miniImage.getAttribute('src');
+      mainImage.setAttribute('src', activePath);
+      miniImage.setAttribute('style', 'opacity:1');
             
-      for (let miniImg of thumbnails) {
+      for (let miniImg of miniImages) {
         let miniPath = miniImg.getAttribute('src');
         if (miniPath !== activePath) {
           miniImg.removeAttribute('style');
