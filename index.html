@@ -10,16 +10,6 @@
     <script src="script.js"></script> 
   </head>
 
-<!-- <script>
-  window.addEventListener('DOMContentLoaded', (event) => {
-    let userAgent = navigator.userAgent;
-    let appName = navigator.appName;
-    let appCodeName = navigator.appCodeName;
-    let appVersion = navigator.appVersion
-    alert(userAgent + '\n' + appName + '\n' + appCodeName + '\n' + appVersion);
-  });
-</script> -->
-
 <body>
   <div class="modal">
     <div class="modal-content">
@@ -99,11 +89,11 @@
         </div>
         
         <div class="size-dropdown">
-          <span>XS</span>
-          <span>S</span>
-          <span>M</span>
-          <span>L</span>
-          <span>XL</span>
+          <span class="pointer">XS</span>
+          <span class="pointer">S</span>
+          <span class="pointer">M</span>
+          <span class="pointer">L</span>
+          <span class="pointer">XL</span>
         </div>
       </div>
 
@@ -255,18 +245,12 @@ window.addEventListener('DOMContentLoaded', (event) => {
   /* Выпадающее меню выбора размера */
   let dropDownMenu = document.querySelector('.size-dropdown');
   let dropButtons = document.querySelectorAll('.size-btn');
-  let sizeItems = document.querySelectorAll('.size-dropdown a');
+  let sizeItems = document.querySelectorAll('.size-dropdown span');
 
   for (let dropButton of dropButtons) {
     dropButton.onclick = function(event) {
       event.stopPropagation()
       dropDownMenu.classList.toggle('show');
-      /*if (event.target.classList.contains('drop-btn')) {
-        dropDownMenu.classList.toggle('show');
-      } else if (dropDownMenu.classList.contains('show')) {
-        dropDownMenu.classList.remove('show'); 
-        // код на случай если получится заставить работать addEventListener на iOS
-      }*/
     }
   }
 
