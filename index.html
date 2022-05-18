@@ -300,11 +300,11 @@ window.addEventListener('DOMContentLoaded', (event) => {
   
   likeButton.onclick = function () {
     let likeChoose = likeImg.getAttribute('src');
-    if (likeChoose == 'heart-f_l.png') {
-      likeImg.setAttribute('src', 'heart-e_l.png');
+    if (likeChoose == 'heart-f_l.PNG') {
+      likeImg.setAttribute('src', 'heart-e_l.PNG');
       modalContent.textContent = 'Товар "' + nameItem + '" удален из избранного';
     } else {
-      likeImg.setAttribute('src', 'heart-f_l.png');
+      likeImg.setAttribute('src', 'heart-f_l.PNG');
       modalContent.textContent = 'Товар "' + nameItem + '" добавлен в избранное';
     };
     modal.style.display = "block";
