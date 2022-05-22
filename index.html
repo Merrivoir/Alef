@@ -3,12 +3,23 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TEST PAGE</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="modal.css">
-    <link rel="stylesheet" href="dpopdown-menu.css">
-    <link rel="stylesheet" href="media-screen.css">
-    <script src="script.js"></script> 
+    <link rel="stylesheet" href="sheets/styles.css">
+    <link rel="stylesheet" href="sheets/modal.css">
+    <link rel="stylesheet" href="sheets/dpopdown-menu.css">
+    <link rel="stylesheet" href="sheets/media-screen.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script src="JS/script.js"></script>
   </head>
+
+<!-- <script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    let userAgent = navigator.userAgent;
+    let appName = navigator.appName;
+    let appCodeName = navigator.appCodeName;
+    let appVersion = navigator.appVersion
+    alert(userAgent + '\n' + appName + '\n' + appCodeName + '\n' + appVersion);
+  });
+</script> -->
 
 <body>
   <div class="modal">
@@ -23,10 +34,10 @@
     <div class="top-bar">
       <div class="top-bar-nav">
         <span><a href="#">LOGO</a></span>
-        <span><a href="#"><img src="person_d.PNG" class="top-bar-nav-img"></a></span>
-        <span><a href="#"><img src="heart-e_d.PNG" class="top-bar-nav-img"></a></span>
-        <span><a href="#"><img src="shop_d.PNG" class="top-bar-nav-img"></a></span>
-        <span><img src="hamb_d.PNG" class="hamburger-button top-bar-nav-img pointer"></span>
+        <span><a href="#"><img src="img/person_d.PNG" class="top-bar-nav-img"></a></span>
+        <span><a href="#"><img src="img/heart-e_d.PNG" class="top-bar-nav-img"></a></span>
+        <span><a href="#"><img src="img/shop_d.PNG" class="top-bar-nav-img"></a></span>
+        <span><img src="img/hamb_d.PNG" class="hamburger-button top-bar-nav-img pointer"></span>
       </div>
     </div>
     
@@ -39,47 +50,49 @@
     </div>
   
   </header>
-
+  
+  
 <main>
-    
+  
   <section class="mainblock">
       
     <div class="mb-container-img">
-      <img src="4.jpg" class="main">
+      <img src="img/4.jpg" class="main">
       <div class="mb-container-mini">
-        <img src="4.jpg" class="mini pointer">
-        <img src="5.jpg" class="mini pointer">
-        <img src="6.jpg" class="mini pointer">
-        <img src="7.jpg" class="mini pointer">
-        <img src="8.jpg" class="mini pointer">
+        <img src="img/4.jpg" class="mini pointer">
+        <img src="img/5.jpg" class="mini pointer">
+        <img src="img/6.jpg" class="mini pointer">
+        <img src="img/7.jpg" class="mini pointer">
+        <img src="img/8.jpg" class="mini pointer">
       </div>
     </div>
       
-    <div class="mb-info">
-      <h2 class="mb-info-name">Пижама для девочек</h2>
-        
-      <div class="mb-info-sku">Арт. 026401/41</div>
+    <div class="mb-info" id="info">
+      <h2 class="mb-info-name">{{itemname}}</h2>
+      
+      <div class="mb-info-sku">Арт. {{sku}}</div>
         
       <div class="mb-info-feedback fs-standart">
         <span>Отзывы</span>
-        <span class="star-1">&#9733;</span>
-        <span class="star-2">&#9733;</span>
-        <span class="star-3">&#9733;</span>
-        <span class="star-4">&#9733;</span>
-        <span class="star-5">&#9734;</span>
-        <span class="feedback-count">14 отзывов</span>
+        <span class="fs-16" v-if="raiting >= 5">&#9733;&nbsp;&#9733;&nbsp;&#9733;&nbsp;&#9733;&nbsp;&#9733;</span>
+        <span class="fs-16" v-else-if="raiting >= 4">&#9733;&nbsp;&#9733;&nbsp;&#9733;&nbsp;&#9733;&nbsp;&#9734;</span>
+        <span class="fs-16" v-else-if="raiting >= 3">&#9733;&nbsp;&#9733;&nbsp;&#9733;&nbsp;&#9734;&nbsp;&#9734;</span>
+        <span class="fs-16" v-else-if="raiting >= 2">&#9733;&nbsp;&#9733;&nbsp;&#9734;&nbsp;&#9734;&nbsp;&#9734;</span>
+        <span class="fs-16" v-else-if="raiting >= 1">&#9733;&nbsp;&#9734;&nbsp;&#9734;&nbsp;&#9734;&nbsp;&#9734;</span>
+        <span class="fs-16" v-else>&#9734;&nbsp;&#9734;&nbsp;&#9734;&nbsp;&#9734;&nbsp;&#9734;</span>
+        <span class="feedback-count">{{ feedback }}</span>
         <span class="arrow-right pointer">&#10095;</span>
       </div>
         
       <div class="mb-info-price">
-        <span class="price-current">800 &#8381;</span>
-        <span class="price-old fs-standart">1200 &#8381;</span>
+        <span class="price-current">{{currentPrice}}</span>
+        <span class="price-old fs-standart" v-if="discount > 0 || promo > 0">{{nonDiscountPrice}}</span>
         <span class="arrow-right pointer">&#10095;</span>
       </div>
         
       <div class="mb-info-promo">
-        <span class="promo">Скидка -36%</span>
-        <span class="promo">Акция -20%</span>
+        <span class="promo" v-if="discount > 0">Скидка -{{discount}}%</span>
+        <span class="promo" v-if="promo > 0">Акция -{{promo}}%</span>
       </div>
         
       <div class="mb-info-size">
@@ -111,7 +124,7 @@
             <span class="fs-standart">Добавить в корзину</span>
           </div>
           <div class="add-favorite pointer">
-            <img class="like" src="heart-e_l.PNG">
+            <img class="like" src="img/heart-e_l.PNG">
           </div>
         </div>
       </div>
@@ -119,11 +132,11 @@
         
       <div class="mb-info-instant fs-standart"><a href="#">Купить в 1 клик</a></div>
       
-      <div class="mb-info-extra fs-standart"><span><img src="cloth_d.PNG" class="desc-img"></span><a href="#">Описание товара</a></div>
+      <div class="mb-info-extra fs-standart"><span><img src="img/cloth_d.PNG" class="desc-img"></span><a href="#">Описание товара</a></div>
       
-      <div class="mb-info-extra fs-standart"><span><img src="clock_d.PNG" class="desc-img"></span><a href="#">Доставка и возврат</a></div>
+      <div class="mb-info-extra fs-standart"><span><img src="img/clock_d.PNG" class="desc-img"></span><a href="#">Доставка и возврат</a></div>
       
-      <div class="mb-info-extra fs-standart"><span><img src="card_d.PNG" class="desc-img"></span><a href="#">Способы оплаты</a></div>
+      <div class="mb-info-extra fs-standart"><span><img src="img/card_d.PNG" class="desc-img"></span><a href="#">Способы оплаты</a></div>
     
     </div>
   </section>
@@ -131,28 +144,28 @@
   <div class="divide fs-standart"><a href="#">Посмотреть все стили</a></div>
     
   <section class="gallery">
-    <div class="sub-gallery"><img src="9.jpg"></div>
+    <div class="sub-gallery"><img src="img/9.jpg"></div>
     
-    <div class="sub-gallery"><img src="10.jpg"></div>
+    <div class="sub-gallery"><img src="img/10.jpg"></div>
     
-    <div class="sub-gallery"><img src="11.jpg"></div>
+    <div class="sub-gallery"><img src="img/11.jpg"></div>
     
-    <div class="sub-gallery"><img src="12.jpg"></div>
+    <div class="sub-gallery"><img src="img/12.jpg"></div>
     
-    <div class="sub-gallery"><img src="13.jpg"></div>
+    <div class="sub-gallery"><img src="img/13.jpg"></div>
     
     <div class="sub-gallery sub-gallery-overlayer fs-standart">
       <div class="sub-gallery-picture">
-        <span><img src="set_l.PNG" class="top-bar-nav-img"></span>
+        <span><img src="img/set_l.PNG" class="top-bar-nav-img"></span>
       </div>
       
       <div class="sub-gallery-clothes pointer">
-        <span><img src="shop_l.PNG" class="add-img"></span>
+        <span><img src="img/shop_l.PNG" class="add-img"></span>
         <span>Узнай, что на мне</span>
       </div>
      
       <div class="sub-gallery-likes">
-        <span><img src="heart-f_l.PNG" class="desc-img"></span>
+        <span><img src="img/heart-f_l.PNG" class="desc-img"></span>
         <span class="sub-gallery-likecount">200</span>
       </div>
     </div>
@@ -163,14 +176,14 @@
 <footer>
   <div class="bottom-info fs-standart">
     <div class="bot-nav">
-      <span>Покупателям</span>
+      <span class="ucase">Покупателям</span>
       <span><a href="#">Каталог</a></span>
       <span><a href="#">Акции</a></span>
       <span><a href="#">Бренды</a></span>
     </div>
     
     <div class="bot-nav">
-      <span>О нас</span>
+      <span class="ucase">О нас</span>
       <span><a href="#">О компании</a></span>
       <span><a href="#">Новости</a></span>
       <span><a href="#">Команда</a></span>
@@ -178,169 +191,19 @@
   </div>
   
   <div class="bottom-subscribe">
-    <form id="email-form" class="subscribe-form">
-      <span>Узнайте&nbsp;первым&nbsp;о новинках&nbsp;и&nbsp;акциях</span>
+    <form id="email-form" class="subscribe-form" action="https://webhooks.us/4b9ddf50-76e6-4614-afb7-2f47c900e503" method="POST">
+      <span class="ucase">Узнайте&nbsp;первым&nbsp;о новинках&nbsp;и&nbsp;акциях</span>
       <div class="email-input">
         <input form="email-form" class="email" type="email" placeholder="Адрес электронной почты">
         <span class="close erase-email">&times;</span>
       </div>
-      <input type="submit" form="email-form" class="subscribe-button pointer fs-standart" value="Подписаться">
+      <div class="submit subscribe-button pointer fs-standart"><span>Подписаться</span></div>
+      <input type="submit" form="email-form" style="display:none">
     </form>
   </div>
 </footer>
 
 </body>
-
-<script>
-window.addEventListener('DOMContentLoaded', (event) => {
-  
-  /* Гамбургер меню */
-  let hamButtonMenu = document.querySelector('.hamburger-button');
-  let hamDropMenu = document.querySelector('.hamburger-menu');
-  let hamClose = document.querySelector('.hamburger-close');
-  let hamMenuItems = document.querySelectorAll('.hamburger-menu-item');
-
-  hamButtonMenu.onclick = function() {
-    hamDropMenu.style.display = "flex";
-  }
-
-  hamClose.onclick = function() {
-    hamDropMenu.removeAttribute('style');
-  }
-
-  for (let hamMenuItem of hamMenuItems) {
-    hamMenuItem.onclick = function() {
-      hamDropMenu.removeAttribute('style');
-    }
-  }
-  
-  window.onclick = function (event) {
-    if (event.target !== hamButtonMenu && hamDropMenu.getAttribute('style')) {
-      hamDropMenu.removeAttribute('style');
-    }
-  }
-
-  /* Клик по миниатюре */
-  let miniImages = document.querySelectorAll('.mini');
-  let mainImage = document.querySelector('.main');
-  let mainImg = mainImage.getAttribute('src');
-        
-  miniImages[0].setAttribute('style', 'opacity:1');
-        
-  for (let miniImage of miniImages) {
-    miniImage.onclick = function() {
-      let activePath =  miniImage.getAttribute('src');
-      mainImage.setAttribute('src', activePath);
-      miniImage.setAttribute('style', 'opacity:1');
-            
-      for (let miniImg of miniImages) {
-        let miniPath = miniImg.getAttribute('src');
-        if (miniPath !== activePath) {
-          miniImg.removeAttribute('style');
-        }
-      }
-    }
-  }
-
-  /* Выпадающее меню выбора размера */
-  let dropDownMenu = document.querySelector('.size-dropdown');
-  let dropButtons = document.querySelectorAll('.size-btn');
-  let sizeItems = document.querySelectorAll('.size-dropdown span');
-
-  for (let dropButton of dropButtons) {
-    dropButton.onclick = function(event) {
-      event.stopPropagation()
-      dropDownMenu.classList.toggle('show');
-    }
-  }
-
-  for (let sizeItem of sizeItems) {
-    sizeItem.onclick = function() {
-      dropDownMenu.classList.remove('show');
-      dropButtons[1].textContent = sizeItem.textContent;
-    }
-  }
-        
-  /* Увеличить и уменьшить количество */
-  let plusCart = document.querySelector('.count-inc');
-  let numCart = document.querySelector('.count-value');
-  let minusCart = document.querySelector('.count-dec');
-  let cartCount = Number(numCart.textContent);
-
-  plusCart.onclick = function() {
-    cartCount += 1;
-    numCart.textContent = cartCount;
-  };
-
-  minusCart.onclick = function() {
-    cartCount -=1 ? cartCount > 1 : cartCount = 1;
-    numCart.textContent = cartCount;
-  };
-          
-    /* Добавить в Корзину */
-  let nameItem = document.querySelector('.mb-info-name').textContent;
-  let addCartButton = document.querySelector('.add-cart');
-  let modal = document.querySelector('.modal');
-  let modalContent = document.querySelector('.modal-content p');
-  let modalCloseButton = document.querySelector('.close');
-
-  addCartButton.onclick = function() {
-    modalContent.textContent = 'Товар "' + nameItem + '" в количестве ' + cartCount + ' шт. добавлен в корзину';
-    modal.style.display = "block";
-    modal.classList.remove("hidden");
-
-    setTimeout(function(){
-      modal.classList.add("hidden");
-    }, 2000);
-  }
-  
-  /*Добавить в Избранное */
-  let likeButton = document.querySelector('.add-favorite');
-  let likeImg = document.querySelector('.like')
-  
-  likeButton.onclick = function () {
-    let likeChoose = likeImg.getAttribute('src');
-    if (likeChoose == 'heart-f_l.PNG') {
-      likeImg.setAttribute('src', 'heart-e_l.PNG');
-      modalContent.textContent = 'Товар "' + nameItem + '" удален из избранного';
-    } else {
-      likeImg.setAttribute('src', 'heart-f_l.PNG');
-      modalContent.textContent = 'Товар "' + nameItem + '" добавлен в избранное';
-    };
-    modal.style.display = "block";
-    modal.classList.remove("hidden");
-            
-    setTimeout(function(){
-      modal.classList.add("hidden");
-    }, 1200);
-  }
-
-  modalCloseButton.onclick = function() {
-    modal.style.display = 'none';
-  }
-
-  window.addEventListener('click', function(event) {
-    if (event.target == modal) {
-      modal.style.display = "none";
-    }
-  });
-
-  window.addEventListener('touchstart', function(event) {
-    if (event.target == modal) {
-      modal.style.display = "none";
-    }
-  });
-  
-  /* удаление Email */
-  let eraseButton = document.querySelector('.erase-email');
-  let emailField = document.querySelector('.email')
-
-    eraseButton.onclick = function() {
-      if (emailField.value) {
-        emailField.value='';
-      }
-    }
-});
-</script>
+<script src="JS/index.js"></script>
 </html>
    
