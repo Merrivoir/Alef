@@ -129,11 +129,11 @@ window.onscroll = function (event) {
   
   likeButton.onclick = function () {
     let likeChoose = likeImg.getAttribute('src');
-    if (likeChoose == 'img/heart-f_l.png') {
-      likeImg.setAttribute('src', 'img/heart-e_l.png');
+    if (likeChoose == 'img/heart-f_l.PNG') {
+      likeImg.setAttribute('src', 'img/heart-e_l.PNG');
       modalContent.textContent = 'Товар "' + nameItem + '" удален из избранного';
     } else {
-      likeImg.setAttribute('src', 'img/heart-f_l.png');
+      likeImg.setAttribute('src', 'img/heart-f_l.PNG');
       modalContent.textContent = 'Товар "' + nameItem + '" добавлен в избранное';
     };
     modal.style.display = "block";
