@@ -190,4 +190,16 @@ window.onscroll = function (event) {
       modal.style.display = "none";
     }
   });
+
+  let overLayers = document.querySelectorAll('.sub-gallery');
+
+  for (let over of overLayers) {
+    over.addEventListener('mouseover', function() {
+      over.children[1].setAttribute('style', 'visibility:visible');
+    });
+    over.addEventListener('mouseout', function() {
+      over.children[1].setAttribute('style', 'visibility:hidden');
+    });
+  }
+
 });
