@@ -198,7 +198,7 @@ window.onscroll = function (event) {
       over.children[1].setAttribute('style', 'visibility:visible');
     });
     over.addEventListener('mouseout', function() {
-      over.children[1].setAttribute('style', 'visibility:hidden');
+      over.children[1].removeAttribute('style');
     });
   }
 
