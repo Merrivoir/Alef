@@ -2,8 +2,8 @@ var app = new Vue({
     
     el: '#info',
     data: {
-      itemname: 'Пижама для мальчиков',
-      sku: '02640141/67',
+      itemname: 'Пижама для девочек',
+      sku: '02765/46',
       raiting: 4,
       reviews: 14,
       price: 1500,

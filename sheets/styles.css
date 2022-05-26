@@ -58,7 +58,7 @@ a {
   }
   
   .top-bar-nav span:first-child {
-    margin: 0 auto 0 0;
+    margin: 0 auto 0 10px;
     font-size: 22px;
     line-height: 16px;
     font-weight: 700;
@@ -71,6 +71,10 @@ a {
   .top-bar-nav-img {
     width: 20px;
     vertical-align: middle;
+  }
+
+  .top-bar-nav span:nth-of-type(4) {
+    margin-right: 10px;
   }
 
   .top-bar-nav span:last-child {
@@ -91,49 +95,52 @@ a {
 /* Основная секция */
 .mainblock {
   max-width: 1390px;
-  margin: 60px auto 0;
+  margin: 65px auto 0;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   justify-content: center;
-  gap: 20px;
+  gap: 0px;
 }
 
 /* Блок с изображениями */
   .mb-container-img {
     position: relative;
+    margin: 0 10px;
   }
   
-  .mb-container-mini {
-    position: absolute;
-    top: 3%;
-    left: 4%;
-    max-width: 70px;
-    width: 15%;
-    display: flex;
-    flex-direction: column;
-    gap: 7px;
-  }
+    .mb-container-mini {
+      position: absolute;
+      top: 25px;
+      left: 20px;
+      max-width: 70px;
+      width: 15%;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
 
-  .mini {
-    opacity: 0.3; 
-  }
+    .mini {
+      opacity: 0.3; 
+    }
 
-  .mini:hover {
-    opacity: 0.5;
-  }
+    .mini:hover {
+      opacity: 0.5;
+    }
 
 /* Блок с информацией о товаре*/
 .mb-info {
+  margin: 0 0 0 26px;
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 0px;
 }
 
   .mb-info-name {
     font-size: 18px;
     line-height: 24px;
     font-weight: 600;
-    margin: 20px 0 10px 0;
+    letter-spacing: 0.025em;
+    margin: 22px 0 10px 0;
   }
 
   .mb-info-sku {
@@ -146,19 +153,19 @@ a {
 /* Блок с отзывами */
 .mb-info-feedback {
   display: flex;
-  margin: 20px 0 0 0;
+  margin: 16px 0 0 0;
 }
 
   .mb-info-feedback span {
-    margin: 0px 10px 0 0;
+    margin: 0px 12px 0 0;
   }
   
 /* Блок с ценами */
 .mb-info-price {
-  margin: 30px 0 0 0;
+  margin: 46px 0 0 0;
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 16px;
 }
 
   .price-current {
@@ -175,21 +182,23 @@ a {
   
 /* Блок со скидками и акциями */
 .mb-info-promo {
-  margin: 10px 0 0 0;
+  margin: 12px 0 0 0;
+  display: flex;
+  gap: 8px;
 }
 
   .promo {
     font-size: 12px;
     line-height: 16px;
     border: 1px solid #333333;
-    padding: 2px 4px;
+    padding: 2px 6px;
   }
 
   /* Блок выбора и определения размера
 стили контейнера и выпадающего списка находятся
   в dropdown-menu.css */
 .mb-info-size-table {
-  margin: 10px 0 0 0;
+  margin: 12px 0 0 0;
 }
 
 /* Блок счетчика и добавления в корзину и избранное */
@@ -216,17 +225,17 @@ a {
     }
 
     .count-inc {
-      padding-left: 12px;
+      padding-left: 20px;
     }
 
     .count-dec {
-      padding-right: 12px;
+      padding-right: 20px;
     }
 
   .actions-add {
     display: flex;
     flex-wrap: nowrap;
-    gap: 5px;
+    gap: 4px;
   }
   
   .add-cart {
@@ -234,7 +243,7 @@ a {
     color: white;
     border: none;
     height: 44px;
-    width: 203px;
+    width: 200px;
     font-size: inherit;
     line-height: 20px;
     display: flex;
@@ -257,18 +266,18 @@ a {
     }
 
   .mb-info-instant {
-    margin: 12px 0 24px 0;
-    padding-bottom: 30px;
+    margin: 10px 0 24px 0;
+    padding-bottom: 28px;
     border-bottom: 0.5px solid #c4c4c4;
   }
 
   .mb-info-extra {
-    margin-bottom: 12px;
+    margin-bottom: 10px;
   }
 
   /* Разделитель */
   .divide {
-    margin: 30px 0;
+    margin: 32px 0;
     text-align: center;
   }
 
@@ -361,7 +370,7 @@ footer {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: 1fr;
-  margin: 80px auto;
+  margin: 136px auto;
   max-width: 1390px;
 }
 
