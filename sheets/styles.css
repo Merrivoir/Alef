@@ -406,7 +406,7 @@ footer {
   }
 
   .subscribe-form {
-    width: 80%;
+    width: 65%;
     display: flex;
     flex-direction: column;
     margin: 0 auto;
@@ -414,12 +414,17 @@ footer {
 
   .email {
     width: 100%;
+    padding-left: 20px;
     color: #828282;
     background-color: #FFFFFF;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.1em;
     font-weight: 400;
     border: none;
     outline: none;
+  }
+
+  .erase-email {
+    padding-right: 16px;
   }
 
   .email-input {
@@ -429,11 +434,11 @@ footer {
     gap: 8px;
     height: 36px;
     border-bottom: 1px solid #c4c4c4;
-    margin: 26px 0;
+    margin: 33px 0 35px 0;
   }
 
   .subscribe-button {
-    width: 150px;
+    width: 146px;
     height: 36px;
     color: #333333;
     align-self: flex-end;
@@ -441,6 +446,7 @@ footer {
     border-radius: 0px;
     background-color: #FFFFFF;
     display: flex;
+    margin-right: 2px;
   }
   .subscribe-button span {
     margin:auto;
