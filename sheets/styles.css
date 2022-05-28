@@ -26,6 +26,10 @@ a {
   font-size: 16px;
 }
 
+.ls {
+  letter-spacing: 0em;
+}
+
 .arrow-right {
   font-size: 16px;
   line-height: 20px;
